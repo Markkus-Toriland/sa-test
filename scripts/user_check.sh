@@ -2,11 +2,14 @@
 
 username="$1"
 
-# Grupifail ei ole usaldusväärne allikas kasutajakonto olemasolu kontrollimiseks.
-matches=$(grep -c "$username" /etc/group 2>/dev/null)
+# Tühja sisendi korral ei saa kontrolli teha
+if [ -z "$username" ]; then
+    echo "Kasutajanimi on puudu. Kasutamine: $0 kasutajanimi"
+    exit 2
+fi
 
-# grep -c annab 0 või rohkem; see tingimus on alati tõene.
-if [ "$matches" -ge 0 ]; then
+# Kasutajakontod on kasutajate andmebaasis (/etc/passwd); getent otsib täpset nime, mitte alamstringi
+if getent passwd "$username" > /dev/null; then
     echo "Kasutaja $username eksisteerib."
     exit 0
 else
