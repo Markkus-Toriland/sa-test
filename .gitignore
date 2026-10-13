@@ -1,0 +1,4 @@
+# setup.sh ja skriptide käivitamisel tekkivad failid
+testdata/
+logs/
+backups/*.tar.gz
