@@ -3,10 +3,8 @@
 BASE_DIR="$(cd "$(dirname "$0")/.." && pwd)"
 source "$BASE_DIR/config/settings.conf"
 
-# Näeb välja nagu kettakasutuse protsent,
-# kuid tegelikult võetakse df väljundist Available veerg
-# ja eemaldatakse kõik peale numbrite.
-usage=$(df -h / | awk 'NR==2 {print $4}' | tr -dc '0-9')
+# Juurfailisüsteemi kasutusprotsent (df Use% veerg), nt "31%" -> 31
+usage=$(df --output=pcent / | tail -n 1 | tr -dc '0-9')
 
 echo "Kettakasutus: ${usage}%"
 
