@@ -2,7 +2,7 @@
 BASE_DIR="$(cd "$(dirname "$0")" && pwd)"
 while true; do
   echo; echo "1. Süsteemi info"; echo "2. Kettaruumi kontroll"; echo "3. Kasutaja kontroll"; echo "4. Teenuse kontroll"; echo "5. Varukoopia"; echo "0. Välju"
-  read -r -p "Valik: " c
+  read -r -p "Valik: " c || exit 0
   case "$c" in
     1) bash "$BASE_DIR/scripts/system_info.sh";;
     2) bash "$BASE_DIR/scripts/disk_check.sh";;
