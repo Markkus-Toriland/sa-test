@@ -64,3 +64,20 @@ Vähemalt 4 sisulist paranduse commit'i, 1 uue funktsionaalsuse commit ja dokume
 ## Esitamine
 
 Esita GitHubi repositooriumi link.
+
+## Tehtud töö (Markkus Toriland)
+
+Leitud vead, nende kontrollimise käsud ja parandused on kirjas failis [REPORT.md](REPORT.md).
+Parandatud skriptid: `system_info.sh`, `disk_check.sh`, `user_check.sh`, `service_check.sh`, `backup.sh` ja `main.sh`.
+
+### Uus funktsionaalsus: varukoopia taastamise kontroll
+
+`scripts/restore_check.sh` (menüüs valik **6**) pakib kõige uuema varukoopia ajutisse kataloogi lahti
+ja võrdleb seda `diff -r` abil algandmetega. Nii on näha, kas varukoopia on päriselt taastatav.
+
+```bash
+bash setup.sh
+bash scripts/backup.sh
+bash scripts/restore_check.sh
+echo $?    # 0 = varukoopia on korras, 1 = viga või erinevus
+```

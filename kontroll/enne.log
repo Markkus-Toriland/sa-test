@@ -1,0 +1,51 @@
+## system_info
+=== Süsteemi info ===
+Hostname: user
+Kasutaja: sv-markkus
+Kernel: x86_64
+Uptime: 19:35:41
+Mälu kokku: 1721 MB
+hostname=sv-markkus whoami=user uname-r=6.12.74+deb13+1-amd64 uname-m=x86_64
+up 1 hour, 40 minutes
+               total        used        free      shared  buff/cache   available
+Mem:            1973         256        1370           0         489        1716
+Swap:           1721           0        1721
+## disk_check
+Kettakasutus: 27%
+OK: kettaruumi kasutus on normis.
+exit=0
+Filesystem      Size  Used Avail Use% Mounted on
+/dev/sda1        30G  1.3G   27G   5% /
+## user_check
+Kasutaja root eksisteerib.
+exit=0
+Kasutaja kasutaja_keda_ei_ole eksisteerib.
+exit=0
+Kasutaja  eksisteerib.
+exit=0
+## service_check
+Teenus ssh töötab.
+exit=0
+Teenus systemd-networkd töötab.
+exit=0
+Teenus olematu ei tööta.
+exit=1
+Teenus  ei tööta.
+exit=1
+active
+inactive
+inactive
+## backup
+Varukoopia loomine...
+Varukoopia valmis: /home/user/sa-test/backups/backup_20261013_193543.tar.gz
+Failide arv: 3
+exit=0
+backups/backup_20261013_193543.tar.gz: ASCII text
+
+gzip: stdin: not in gzip format
+tar: Child returned status 1
+tar: Error is not recoverable: exiting now
+tar exit=2
+## main EOF
+exit=124
+275714

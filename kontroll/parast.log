@@ -1,0 +1,52 @@
+## system_info
+=== Süsteemi info ===
+Hostname: sv-markkus
+Kasutaja: user
+Kernel: 6.12.74+deb13+1-amd64
+Uptime: up 1 hour, 46 minutes
+Mälu kokku: 1973 MB
+hostname=sv-markkus whoami=user uname-r=6.12.74+deb13+1-amd64 uname-m=x86_64
+up 1 hour, 46 minutes
+               total        used        free      shared  buff/cache   available
+Mem:            1973         259        1357           0         500        1714
+Swap:           1721           0        1721
+## disk_check
+Kettakasutus: 5%
+OK: kettaruumi kasutus on normis.
+exit=0
+Filesystem      Size  Used Avail Use% Mounted on
+/dev/sda1        30G  1.3G   27G   5% /
+## user_check
+Kasutaja root eksisteerib.
+exit=0
+Kasutajat kasutaja_keda_ei_ole ei leitud.
+exit=1
+Kasutajanimi on puudu. Kasutamine: scripts/user_check.sh kasutajanimi
+exit=2
+## service_check
+Teenus ssh töötab.
+exit=0
+Teenus systemd-networkd on olemas, aga ei tööta (inactive).
+exit=1
+Teenust olematu ei ole olemas.
+exit=3
+Teenuse nimi on puudu. Kasutamine: scripts/service_check.sh teenus
+exit=2
+active
+inactive
+inactive
+## backup
+Varukoopia loomine...
+Varukoopia valmis: /home/user/sa-test/backups/backup_20261013_194135.tar.gz
+Failide arv: 3
+exit=0
+backups/backup_20261013_194135.tar.gz: gzip compressed data, from Unix, original size modulo 2^32 10240
+./
+./important data.txt
+./normal.txt
+./subdir/
+./subdir/nested.txt
+tar exit=0
+## main EOF
+exit=0
+8
